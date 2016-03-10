@@ -9,6 +9,23 @@ Inbox for notes.
 
 ## Unity
 
+### Raycast Object to Check Mouse Over
+
+Inside the Update() method of an object's script, add the following.
+
+```
+RaycastHit hit;
+Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
+bool wasHit = Physics.Raycast (ray, out hit);
+
+if (wasHit) {
+	Debug.Log ("Sphere was hit.");
+
+} else {
+	Debug.Log ("Sphere wasn't hit.");			
+}
+```
+
 ## Pandoc
 
 ### Convert to ICML (InDesign)
