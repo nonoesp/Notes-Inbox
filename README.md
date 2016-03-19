@@ -4,7 +4,7 @@ Inbox for notes.
 ## Table of Contents
 
 * [(S)CSS](#scss)
-* Unity
+* [Unity](#unity)
 * Pandoc
 * Google Maps and Street View API
 
