@@ -6,7 +6,7 @@ Inbox for notes.
 * [(S)CSS](#scss)
 * [Unity](#unity)
 * [Pandoc](#pandoc)
-* [Google Maps and Street View API]()
+* [Google Maps and Street View API](#google-maps--street-view-api)
 
 ## (S)CSS
 
