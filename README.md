@@ -8,7 +8,7 @@ Inbox for notes.
 * Pandoc
 * Google Maps and Street View API
 
-## (S)CSS{#scss}
+## (S)CSS
 
 ### Resources
 
