@@ -51,6 +51,7 @@ pandoc -s Text.md -o Text.icml
 
 ### Reference
 
+* [Google Maps JavaScript API V3 Reference](https://developers.google.com/maps/documentation/javascript/reference)
 * [Custom controls](https://developers.google.com/maps/documentation/javascript/examples/control-custom)
 * [Simple styled maps](https://developers.google.com/maps/documentation/javascript/examples/maptype-styled-simple)
 * [Complex styled maps](https://developers.google.com/maps/documentation/javascript/examples/maptype-styled-complex)
