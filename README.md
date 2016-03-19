@@ -42,6 +42,12 @@ pandoc -s Text.md -o Text.icml
 
 ## Google Maps & Street View API
 
+### Reference
+
+* [Custom controls](https://developers.google.com/maps/documentation/javascript/examples/control-custom)
+* [Simple styled maps](https://developers.google.com/maps/documentation/javascript/examples/maptype-styled-simple)
+* [Complex styled maps](https://developers.google.com/maps/documentation/javascript/examples/maptype-styled-complex)
+
 ### Set Map's Center
 
 ```
