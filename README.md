@@ -57,19 +57,19 @@ pandoc -s Text.md -o Text.icml
 
 ### Set Map's Center
 
-```
+```javascript
 map.setCenter(location);
 ```
 
 ### Pan to a Location
 
-```
+```javascript
 map.panTo(location, duration);
 ```
 
 ### Place a Marker
 
-```
+```javascript
 var marker = new google.maps.Marker({
   position: latLng,
   map: map
