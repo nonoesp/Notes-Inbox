@@ -40,6 +40,20 @@ If the -s option isn't used, which means standalone, the ICML file won't usually
 pandoc -s Text.md -o Text.icml
 ```
 
+## Google Maps & Street View API
+
+### Set Map's Center
+
+```
+map.setCenter(location);
+```
+
+### Pan to a Location
+
+```
+map.panTo(location, duration);
+```
+
 ### About Me
 
 Hi there! My name is Nono Martínez Alonso ([@nonoesp](http://twitter.com/nonoesp)) ([www.nono.ma](http://nono.ma)).  
