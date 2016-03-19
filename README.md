@@ -54,6 +54,15 @@ map.setCenter(location);
 map.panTo(location, duration);
 ```
 
+### Place a Marker
+
+```
+var marker = new google.maps.Marker({
+  position: latLng,
+  map: map
+});
+```
+
 ### About Me
 
 Hi there! My name is Nono Martínez Alonso ([@nonoesp](http://twitter.com/nonoesp)) ([www.nono.ma](http://nono.ma)).  
