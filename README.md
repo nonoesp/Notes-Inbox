@@ -7,6 +7,7 @@ Inbox for notes.
 * [Unity](#unity)
 * [Pandoc](#pandoc)
 * [Google Maps and Street View API](#google-maps--street-view-api)
+* [Terminal](#terminal)
 
 ## (S)CSS
 
@@ -75,6 +76,22 @@ var marker = new google.maps.Marker({
   position: latLng,
   map: map
 });
+```
+
+## Terminal
+
+### Rename a File
+
+```
+mv oldname newname
+```
+
+### Output a Date
+
+```
+$(date) // simple date
+$(date + %Y) // date with format, just outputs a year
+$(date + %Y-%M-%D) // date with format, outputs yyyy-mm-dd
 ```
 
 ## About Me
