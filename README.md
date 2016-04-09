@@ -21,11 +21,18 @@ Inbox for notes.
 
 * [Unity C# Tutorials](http://catlikecoding.com/unity/tutorials/)
 
+### Normalize Mouse Screen Position
+
+```csharp
+// Normalize Mouse Screen Coordinates to [-1, 1]
+Vector2 NMouse = new Vector2 (2 * Input.mousePosition.x / Screen.width - 1, 2 * Input.mousePosition.y / Screen.height - 1);
+```
+
 ### Raycast Object to Check Mouse Over
 
 Inside the Update() method of an object's script, add the following.
 
-```
+```csharp
 RaycastHit hit;
 Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
 bool wasHit = Physics.Raycast (ray, out hit);
