@@ -19,7 +19,8 @@ Inbox for notes.
 
 ### References
 
-* [Unity C# Tutorials](http://catlikecoding.com/unity/tutorials/)
+* [C# Tutorials](http://catlikecoding.com/unity/tutorials/)
+* [How to Submit to App Store](https://unity3d.com/learn/tutorials/modules/beginner/platform-specific/how-to-submit-to-the-ios-app-store)
 
 ### Normalize Mouse Screen Position
 
