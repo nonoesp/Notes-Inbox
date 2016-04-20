@@ -21,6 +21,7 @@ Inbox for notes.
 
 * [C# Tutorials](http://catlikecoding.com/unity/tutorials/)
 * [How to Submit to App Store](https://unity3d.com/learn/tutorials/modules/beginner/platform-specific/how-to-submit-to-the-ios-app-store)
+* [NPR sketch shader vvvv](http://www.thomaseichhorn.de/npr-sketch-shader-vvvv/) by Thomas Eichhorn.
 
 ### Normalize Mouse Screen Position
 
