@@ -23,6 +23,10 @@ Inbox for notes.
 * [How to Submit to App Store](https://unity3d.com/learn/tutorials/modules/beginner/platform-specific/how-to-submit-to-the-ios-app-store)
 * [NPR sketch shader vvvv](http://www.thomaseichhorn.de/npr-sketch-shader-vvvv/) by Thomas Eichhorn.
 
+### Scripts
+
+* [Singleton.cs](https://github.com/nonoesp/Notes-Inbox/blob/master/Unity/Scripts/Singleton.cs)
+
 ### Normalize Mouse Screen Position
 
 ```csharp
