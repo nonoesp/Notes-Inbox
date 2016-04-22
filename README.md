@@ -66,6 +66,7 @@ This function assumes you have a GameObject tagged `Terrain` which is the base t
 
 ```csharp
   void Update() {
+    […]
     this.ClampHeightToTerrain();
   }
 
@@ -87,6 +88,11 @@ This function assumes you have a GameObject tagged `Terrain` which is the base t
 ### Create Manual Boundaries from Mesh and Clamp GameObjects
 
 ```csharp
+  void Update() {
+    […]
+    this.ClampBoundaries();
+  }
+  
 	void ClampBoundaries() {
 		GameObject[] boundaries = GameObject.FindGameObjectsWithTag ("Boundary");
 		foreach (GameObject boundary in boundaries) {
