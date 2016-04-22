@@ -90,7 +90,7 @@ This function assumes you have a GameObject tagged `Terrain` which is the base t
 ```csharp
 	void Update() {
 		// Update code
-		this.ClampHeightToTerrain();
+		this.ClampBoundaries();
 	}
   
 	void ClampBoundaries() {
