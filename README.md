@@ -51,6 +51,109 @@ if (wasHit) {
 }
 ```
 
+### Change Material Properties
+
+```csharp
+// Color
+this.GetComponent<MeshRenderer>().material.color = Color.white;
+// Emission color
+this.GetComponent<Mesh<Renderer>().material.SetColor ("_EmissionColor", Color.black);
+```
+
+### Avoid Rigid Bodies to Pass Through a Custom Mesh Terrain Object
+
+This function assumes you have a GameObject tagged `Terrain` which is the base terrain of your game with a MeshCollider and a kinematic Rigidbody. (Be sure to add the tag, MeshCollider and Rigidbody to the mesh object and not to its wrapper.)
+
+```csharp
+  void Update() {
+    this.ClampHeightToTerrain();
+  }
+
+	void ClampHeightToTerrain() {
+		GameObject terrain = GameObject.FindGameObjectWithTag ("Terrain");
+		if (terrain != null) {
+			Ray r = new Ray (transform.position + Vector3.up * 20f, Vector3.down);
+			RaycastHit hit;
+			terrain.GetComponent<MeshCollider> ().Raycast (r, out hit, 100f);
+			Collider col = GetComponent<Collider> ();
+			Vector3 p = transform.position;
+			// todo: add collider half height to clamp minimum
+			float y = Mathf.Clamp(p.y, hit.point.y + col.transform.localScale.y * 0.5f, 30.0f); 
+			transform.position = new Vector3 (p.x, y, p.z);
+		}
+	}
+```
+
+### Create Manual Boundaries from Mesh and Clamp GameObjects
+
+```csharp
+	void ClampBoundaries() {
+		GameObject[] boundaries = GameObject.FindGameObjectsWithTag ("Boundary");
+		foreach (GameObject boundary in boundaries) {
+			if (boundary != null) {
+
+				Ray r;
+				RaycastHit hit;
+				Vector3 p = transform.position;
+				MeshCollider meshCollider = boundary.GetComponent<MeshCollider> ();
+				float x = p.x;
+				float z = p.z;
+				float clampOffset = 1.0f;
+
+				// Z
+
+				// z-forward
+				r = new Ray (transform.position, Vector3.forward);
+				meshCollider.Raycast (r, out hit, 100f);
+
+				if (p.z <= hit.point.z && hit.point.magnitude != 0.0) {
+					if (p.z > hit.point.z - clampOffset) {
+						z = hit.point.z - clampOffset;
+					}
+				}
+
+				// z-back
+				r = new Ray (transform.position, Vector3.back);
+				hit = new RaycastHit();
+				meshCollider.Raycast (r, out hit, 100f);
+
+				if (p.z > hit.point.z && hit.point.magnitude != 0.0) {
+					if (p.z < hit.point.z + clampOffset) {
+						z = hit.point.z + clampOffset;
+					}
+				}
+
+				// X
+
+				// x-forward
+				r = new Ray (transform.position, Vector3.right);
+				hit = new RaycastHit();
+				meshCollider.Raycast (r, out hit, 100f);
+
+				if (p.x <= hit.point.x && hit.point.magnitude != 0.0) {
+					if (p.x > hit.point.x - clampOffset) {
+						x = hit.point.x - clampOffset;
+					}
+				}
+
+				// x-back
+				r = new Ray (transform.position, Vector3.left);
+				hit = new RaycastHit();
+				meshCollider.Raycast (r, out hit, 100f);
+
+				if (p.x > hit.point.x && hit.point.magnitude != 0.0) {
+					if (p.x < hit.point.x + clampOffset) {
+						x = hit.point.x + clampOffset;
+					}
+				}
+
+				transform.position = new Vector3 (x, p.y, z);
+
+			}
+		}
+	}
+```
+
 ## Pandoc
 
 ### Convert to ICML (InDesign)
