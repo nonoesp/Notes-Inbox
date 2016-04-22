@@ -65,10 +65,10 @@ this.GetComponent<Mesh<Renderer>().material.SetColor ("_EmissionColor", Color.bl
 This function assumes you have a GameObject tagged `Terrain` which is the base terrain of your game with a MeshCollider and a kinematic Rigidbody. (Be sure to add the tag, MeshCollider and Rigidbody to the mesh object and not to its wrapper.)
 
 ```csharp
-  void Update() {
-    […]
-    this.ClampHeightToTerrain();
-  }
+	void Update() {
+		// Update code
+		this.ClampHeightToTerrain();
+	}
 
 	void ClampHeightToTerrain() {
 		GameObject terrain = GameObject.FindGameObjectWithTag ("Terrain");
@@ -88,10 +88,10 @@ This function assumes you have a GameObject tagged `Terrain` which is the base t
 ### Create Manual Boundaries from Mesh and Clamp GameObjects
 
 ```csharp
-  void Update() {
-    […]
-    this.ClampBoundaries();
-  }
+	void Update() {
+		// Update code
+		this.ClampHeightToTerrain();
+	}
   
 	void ClampBoundaries() {
 		GameObject[] boundaries = GameObject.FindGameObjectsWithTag ("Boundary");
