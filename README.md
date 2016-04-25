@@ -60,6 +60,12 @@ this.GetComponent<MeshRenderer>().material.color = Color.white;
 this.GetComponent<Mesh<Renderer>().material.SetColor ("_EmissionColor", Color.black);
 ```
 
+### Format a Float to Decimal
+
+```csharp
+String.format("%.2f", floatValue);
+```
+
 ### Avoid Rigid Bodies to Pass Through a Custom Mesh Terrain Object
 
 This function assumes you have a GameObject tagged `Terrain` which is the base terrain of your game with a MeshCollider and a kinematic Rigidbody. (Be sure to add the tag, MeshCollider and Rigidbody to the mesh object and not to its wrapper.)
@@ -158,6 +164,17 @@ This function assumes you have a GameObject tagged `Terrain` which is the base t
 			}
 		}
 	}
+```
+
+### Load a Bytes File as A Resource
+
+(Source: http://answers.unity3d.com/questions/1025651/loading-bytes-resource-as-textasset-to-get-byte.html)
+
+```csharp
+// Option A
+Resources.Load<TextAsset>("path");
+// Option B
+Resources.Load("path", typeof(TextAsset));
 ```
 
 ## Pandoc
