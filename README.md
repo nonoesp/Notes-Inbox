@@ -187,6 +187,24 @@ string[] filePaths = Directory.GetFiles (Application.dataPath + "/Raw" + "/" + f
 string[] filePaths = Directory.GetFiles (Application.dataPath + "/Raw", "*.bytes", SearchOption.AllDirectories);
 ```
 
+### Project Point to a Mesh
+
+This script supposes that you have a mesh tagged `Terrain` in your Unity scene.
+
+```
+public Vector3 ProjectToTerrain(Vector3 p) {
+		GameObject terrain = GameObject.FindGameObjectWithTag ("Terrain");
+		if (terrain != null) {
+			Ray r = new Ray (p + Vector3.up * 20f, Vector3.down);
+			RaycastHit hit;
+			terrain.GetComponent<MeshCollider> ().Raycast (r, out hit, 100f);
+			Collider col = GetComponent<Collider> ();
+			return hit.point;
+		}
+		return new Vector3();
+	}
+```
+
 ## Pandoc
 
 ### Convert to ICML (InDesign)
