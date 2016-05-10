@@ -177,6 +177,16 @@ Resources.Load<TextAsset>("path");
 Resources.Load("path", typeof(TextAsset));
 ```
 
+### Get File Paths
+
+```
+// Universal
+string[] filePaths = Directory.GetFiles (Application.streamingAssetsPath + "/" + folderName + "/", "*.bytes", SearchOption.AllDirectories);
+// iOS (the universal form works also on iOS)
+string[] filePaths = Directory.GetFiles (Application.dataPath + "/Raw" + "/" + folderName + "/", "*.bytes", SearchOption.AllDirectories);
+string[] filePaths = Directory.GetFiles (Application.dataPath + "/Raw", "*.bytes", SearchOption.AllDirectories);
+```
+
 ## Pandoc
 
 ### Convert to ICML (InDesign)
