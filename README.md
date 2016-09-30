@@ -8,6 +8,7 @@ Inbox for notes.
 * [Pandoc](#pandoc)
 * [Google Maps and Street View API](#google-maps--street-view-api)
 * [Terminal](#terminal)
+* [Jupyter](#jupyter)
 
 ## (S)CSS
 
@@ -259,6 +260,16 @@ mv oldname newname
 $(date) // simple date
 $(date + %Y) // date with format, just outputs a year
 $(date + %Y-%M-%D) // date with format, outputs yyyy-mm-dd
+```
+## Jupyter
+
+### Autoload Imported Files Each Time Your Run Any Piece of Code
+
+Just add this to the top of your document and run it once.
+
+```
+%load_ext autoreload
+%autoreload 2
 ```
 
 ## About Me
