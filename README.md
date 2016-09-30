@@ -265,7 +265,7 @@ $(date + %Y-%M-%D) // date with format, outputs yyyy-mm-dd
 
 ### Autoload Imported Files Each Time Your Run Any Piece of Code
 
-Just add this to the top of your document and run it once.
+Just add this to the top of your Jupyter notebook and run it once.
 
 ```
 %load_ext autoreload
