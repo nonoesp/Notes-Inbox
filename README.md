@@ -216,6 +216,54 @@ If the -s option isn't used, which means standalone, the ICML file won't usually
 pandoc -s Text.md -o Text.icml
 ```
 
+### Latex File
+
+As you have discovered, `--include-in-header` adds text into the
+preamble specified in Pandoc's LaTeX template. There are a few ways to do what you are trying to do.
+
+(1) If you would like a completely custom preamble, you need to specify a template file using
+
+	pandoc -o output.tex --template=FILE input.txt
+
+The template can have variables (such as `$title$` and, more importantly, `$body$`) and conditionals. If you would like some inspiration, you could check out the default template using the command:
+
+	pandoc -D latex
+
+(2) If you want to use a new template once and for all, you can make one, call it `default.latex`, and put it in the templates directory (`~/.pandoc/templates/` on a unix machine). In this case, you need to specify that you want to use a template by calling:
+
+	pandoc -o output.tex --standalone input.txt
+
+(3) If you would rather not deal with templates at all, you can just run:
+
+	pandoc -o output.tex input.txt
+
+and the result will be a bare LaTeX document, that is, without a preamble, `\begin{document}` or `\end{document}`. Then you can add a preamble yourself. Note that any metadata (title, author) will be lost when using this method.
+
+Full details on how to make and use templates can be found in [Pandoc's excellent man page](http://johnmacfarlane.net/pandoc/README.html).
+
+(Source: [SuperUser](http://superuser.com/questions/356032/markdown-to-latex-conversion-with-a-custom-preamble-using-pandoc))
+
+### Running biber
+
+Seems like you din’t run `bibtex` but only `(pdf)latex`, right?
+
+LaTeX cares for typesetting the bib but you need another program
+(`bibtex`) to preprocess your `.bib` to be used by `pdflatex`. That means that you’ll need the following steps to get a bibliography
+
+1.  Create you `tex` file and the `bib` file.
+2.  Add the bib to your document with `\bibliography`
+3.  Run `pdflatex mydoc.tex` to get a first version of your document knowing which entries of your bib are needed
+4.  Run `bibtex mydoc` to let `bibtex` do the preprocessing based on the `aux` file. That’ll generate `mydoc.bbl` including all information that `pdflatex` needs
+5.  Run `pdflatex mydoc.tex` again to get the new `bbl` file included in your document
+
+For further information please consult any (good) book about LaTeX this is a basic topic and should be explained there.
+
+-----
+
+Please note that `bibtex` is kind of outdated. The better way is to use `biber` in combination with the package `biblatex`, which provides a great tool to format your citations and bibliography.
+
+(Source: [StackExchange](http://tex.stackexchange.com/a/85150))
+
 ## Google Maps & Street View API
 
 ### Reference
