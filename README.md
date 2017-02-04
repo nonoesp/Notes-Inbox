@@ -313,7 +313,7 @@ $(date + %Y-%M-%D) // date with format, outputs yyyy-mm-dd
 ### Add ssh Key
 
 ```bash
-ssh-add -K [path/to/private SSH key] // e.g. ~/ssh/id_rsa
+ssh-add -K [path/to/private SSH key] # e.g. ~/ssh/id_rsa
 ```
 
 ## Jupyter
