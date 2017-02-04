@@ -86,7 +86,7 @@ This function assumes you have a GameObject tagged `Terrain` which is the base t
 			Collider col = GetComponent<Collider> ();
 			Vector3 p = transform.position;
 			// todo: add collider half height to clamp minimum
-			float y = Mathf.Clamp(p.y, hit.point.y + col.transform.localScale.y * 0.5f, 30.0f); 
+			float y = Mathf.Clamp(p.y, hit.point.y + col.transform.localScale.y * 0.5f, 30.0f);
 			transform.position = new Vector3 (p.x, y, p.z);
 		}
 	}
@@ -99,7 +99,7 @@ This function assumes you have a GameObject tagged `Terrain` which is the base t
 		// Update code
 		this.ClampBoundaries();
 	}
-  
+
 	void ClampBoundaries() {
 		GameObject[] boundaries = GameObject.FindGameObjectsWithTag ("Boundary");
 		foreach (GameObject boundary in boundaries) {
@@ -309,6 +309,13 @@ $(date) // simple date
 $(date + %Y) // date with format, just outputs a year
 $(date + %Y-%M-%D) // date with format, outputs yyyy-mm-dd
 ```
+
+### Add ssh Key
+
+```bash
+ssh-add -K [path/to/private SSH key] // e.g. ~/ssh/id_rsa
+```
+
 ## Jupyter
 
 ### Autoload Imported Files Each Time Your Run Any Piece of Code
@@ -320,8 +327,7 @@ Just add this to the top of your Jupyter notebook and run it once.
 %autoreload 2
 ```
 
-## About Me
+## Me
 
-Hi there! My name is Nono Martínez Alonso ([@nonoesp](http://twitter.com/nonoesp)) ([www.nono.ma](http://nono.ma)).  
-I write at [Getting Simple](http://gettingsimple.com) and [Nono Says](http://nono.ma/says).  
-I also do [Getting Architecture Done](http://gettingarchitecturedone.com) and [Viewtee](http://viewtee.com).
+I'm [Nono Martínez Alonso](http://nono.ma) ([nono.ma](http://nono.ma)), a computational designer with a penchant for design, code, and simplicity.  
+I tweet at [@nonoesp](http://www.twitter.com/nonoesp) and write at [Getting Simple](http://gettingsimple.com/). If you find this useful, I would love to hear about it. Thanks!
