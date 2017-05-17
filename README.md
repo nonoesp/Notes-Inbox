@@ -208,6 +208,8 @@ public Vector3 ProjectToTerrain(Vector3 p) {
 
 ## Pandoc
 
+* [Pandoc Examples](http://pandoc.org/demos.html)
+
 ### Convert to ICML (InDesign)
 
 If the -s option isn't used, which means standalone, the ICML file won't usually work on InDesign.
@@ -242,6 +244,13 @@ and the result will be a bare LaTeX document, that is, without a preamble, `\beg
 Full details on how to make and use templates can be found in [Pandoc's excellent man page](http://johnmacfarlane.net/pandoc/README.html).
 
 (Source: [SuperUser](http://superuser.com/questions/356032/markdown-to-latex-conversion-with-a-custom-preamble-using-pandoc))
+
+
+## PDF with numbered sections and a custom LaTeX header:
+
+```
+pandoc -N --template=mytemplate.tex --variable mainfont="Palatino" --variable sansfont="Helvetica" --variable monofont="Menlo" --variable fontsize=12pt --variable version=1.17.2 MANUAL.txt --latex-engine=xelatex --toc -o example14.pdf
+```
 
 ### Running biber
 
